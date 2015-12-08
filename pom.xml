@@ -1,30 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0                             http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+		                    http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<modules>
 		<module>sandbox.model</module>
 		<module>sandbox.model.hibernate</module>
 
-		<!-- <module>sandbox.javafx</module>
-		<module>sandbox.swing</module> -->
+		<module>sandbox.javafx</module>
+		<module>sandbox.swing</module>
 		<!-- <module>sandbox.rcp</module> -->
 
-		<!-- <module>sandbox.jaxrs</module>
-		<module>sandbox.axis2</module>
-		<module>sandbox.cxf.jaxrs</module>
-		<module>sandbox.cxf.jaxws</module>
-		<module>sandbox.jersey</module>
-		<module>sandbox.jersey.webapp</module>
-		<module>sandbox.resteasy.webapp</module>
-		<module>sandbox.spring.rest</module>
-		<module>sandbox.spring.rest.basic</module>
-		<module>sandbox.spring.rest.oauth2</module>
+		<!-- <module>sandbox.jaxrs</module> -->
+		<!-- <module>sandbox.axis2</module> -->
+		<!-- <module>sandbox.cxf.jaxrs</module> -->
+		<!-- <module>sandbox.cxf.jaxws</module> -->
+		<!-- <module>sandbox.jersey</module> -->
+		<!-- <module>sandbox.jersey.webapp</module> -->
+		<!-- <module>sandbox.resteasy.webapp</module> -->
+		<!-- <module>sandbox.spring.rest</module> -->
+		<!-- <module>sandbox.spring.rest.basic</module> -->
+		<!-- <module>sandbox.spring.rest.oauth2</module> -->
 
-		<module>sandbox.clojure</module>
-		<module>sandbox.groovy</module> -->
+		<!-- <module>sandbox.clojure</module> -->
+		<!-- <module>sandbox.groovy</module> -->
 		<module>sandbox.java8</module>
 		<!-- <module>sandbox.kotlin</module> -->
-		<!-- <module>sandbox.scala</module> -->
+		<module>sandbox.scala</module>
 	</modules>
 	<groupId>com.u14n</groupId>
 	<artifactId>sandbox</artifactId>
@@ -32,11 +35,6 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>${project.artifactId}</name>
 	<inceptionYear>2015</inceptionYear>
-	<url>https://github.com/kjwenger/${project.artifactId}</url>
-	<issueManagement>
-		<url>https://github.com/kjwenger/${project.artifactId}/issues</url>
-		<system>GitHub Issues</system>
-	</issueManagement>
 	<licenses>
 		<license>
 			<name>MIT License</name>
@@ -44,11 +42,22 @@
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
+	<url>https://github.com/kjwenger/${project.artifactId}</url>
 	<scm>
-		<url>https://github.com/kjwenger/${project.artifactId}</url>
+		<url>${project.url}</url>
 		<connection>scm:git:git://github.com/kjwenger/${project.artifactId}.git</connection>
 		<developerConnection>scm:git:git@github.com:kjwenger/${project.artifactId}.git</developerConnection>
 	</scm>
+	<issueManagement>
+		<url>${project.url}/issues</url>
+		<system>GitHub Issues</system>
+	</issueManagement>
+	<distributionManagement>
+		<site>
+			<id>www.u14n.com</id>
+			<url>scp://www.u14n.com/project/</url>
+		</site>
+	</distributionManagement>
 	<organization>
 		<name>Klaus Wenger</name>
 		<url>https://github.com/kjwenger</url>
@@ -69,12 +78,177 @@
 	</repositories>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<hibernate.version>5.0.5.Final</hibernate.version>
 		<java.version>1.8</java.version>
 		<junit.version>4.12</junit.version>
+		<scala.version>2.12.0-M3</scala.version>
+		<scala.compat.version>2.12.0-M3</scala.compat.version>
+		<log4j.version>1.2.17</log4j.version>
+		<slf4j.version>1.7.13</slf4j.version>
 	</properties>
+	<dependencyManagement>
+		<dependencies>
+			<!-- persistence dependencies -->
+			<dependency>
+				<groupId>javax.persistence</groupId>
+				<artifactId>persistence-api</artifactId>
+				<version>2.0.0</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.transaction</groupId>
+				<artifactId>jta</artifactId>
+				<version>1.1</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.validation</groupId>
+				<artifactId>validation-api</artifactId>
+				<version>1.1.0.Final</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-core</artifactId>
+				<version>${hibernate.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-validator</artifactId>
+				<version>5.2.2.Final</version>
+			</dependency>
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-entitymanager</artifactId>
+				<version>${hibernate.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.hibernate.javax.persistence</groupId>
+				<artifactId>hibernate-jpa-2.0-api</artifactId>
+				<version>1.0.1.Final</version>
+			</dependency>
+			<dependency>
+				<groupId>org.hibernate.javax.persistence</groupId>
+				<artifactId>hibernate-jpa-2.1-api</artifactId>
+				<version>1.0.0.Final</version>
+			</dependency>
+			<!-- database dependencies -->
+			<dependency>
+				<groupId>com.h2database</groupId>
+				<artifactId>h2</artifactId>
+				<version>1.4.190</version>
+			</dependency>
+			<!-- framework dependencies -->
+			<dependency>
+				<groupId>com.miglayout</groupId>
+				<artifactId>miglayout-javafx</artifactId>
+				<version>5.0</version>
+			</dependency>
+			<!-- commons dependencies -->
+			<dependency>
+				<groupId>commons-lang</groupId>
+				<artifactId>commons-lang</artifactId>
+				<version>2.6</version>
+			</dependency>
+			<!-- logging dependencies -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>jcl-over-slf4j</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
+			<!-- compiler dependencies -->
+			<dependency>
+				<groupId>org.scala-lang</groupId>
+				<artifactId>scala-library</artifactId>
+				<version>${scala.version}</version>
+			</dependency>
+			<!-- test dependencies -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>info.cukes</groupId>
+				<artifactId>cucumber-java</artifactId>
+				<version>1.2.4</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>info.cukes</groupId>
+				<artifactId>cucumber-picocontainer</artifactId>
+				<version>1.2.4</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>info.cukes</groupId>
+				<artifactId>cucumber-junit</artifactId>
+				<version>1.2.4</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>info.cukes</groupId>
+				<artifactId>cucumber-scala</artifactId> 
+				<version>1.1.3</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.specs2</groupId>
+				<artifactId>specs2-core_${scala.compat.version}</artifactId>
+				<version>3.6.6-scalaz-7.2.0</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.scalatest</groupId>
+				<artifactId>scalatest_${scala.compat.version}</artifactId>
+				<version>2.2.5-M3</version>
+				<!-- <version>3.0.0-M12</version> -->
+				<scope>test</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 	<build>
 		<pluginManagement>
 			<plugins>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>build-helper-maven-plugin</artifactId>
+					<version>1.10</version>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>exec-maven-plugin</artifactId>
+					<version>1.4.0</version>
+				</plugin>
+				<plugin>
+					<groupId>com.zenjava</groupId>
+					<artifactId>javafx-maven-plugin</artifactId>
+					<version>8.2.0</version>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>jdepend-maven-plugin</artifactId>
+					<version>2.0</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-ant-plugin</artifactId>
+					<version>2.4</version>
+				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-antrun-plugin</artifactId>
@@ -87,8 +261,33 @@
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-clean-plugin</artifactId>
+					<version>3.0.0</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.3</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-dependency-plugin</artifactId>
 					<version>2.10</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-deploy-plugin</artifactId>
+					<version>2.8.2</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-install-plugin</artifactId>
+					<version>2.5.2</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>2.6</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -103,28 +302,49 @@
 					<artifactId>maven-release-plugin</artifactId>
 					<version>2.5.3</version>
 				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>2.7</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-site-plugin</artifactId>
+					<version>3.4</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.19</version>
+				</plugin>
+				<plugin>
+					<groupId>net.alchim31.maven</groupId>
+					<artifactId>scala-maven-plugin</artifactId>
+					<version>3.2.2</version>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>versions-maven-plugin</artifactId>
+					<version>2.2</version>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-clean-plugin</artifactId>
-				<version>3.0.0</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
-				<version>2.7</version>
 			</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>versions-maven-plugin</artifactId>
-				<version>2.2</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.3</version>
 				<configuration>
 					<source>${java.version}</source>
 					<target>${java.version}</target>
@@ -133,7 +353,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.10.3</version>
 				<configuration>
 					<show>private</show>
 				</configuration>
@@ -149,12 +368,10 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>jdepend-maven-plugin</artifactId>
-				<version>2.0</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.19</version>
 				<configuration>
 					<argLine>-XX:-UseSplitVerifier</argLine>
 					<includes>
@@ -165,7 +382,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-site-plugin</artifactId>
-				<version>3.4</version>
 				<executions>
 					<execution>
 						<id>attach-descriptor</id>
@@ -178,17 +394,14 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-ant-plugin</artifactId>
-				<version>2.4</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-deploy-plugin</artifactId>
-				<version>2.8.2</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-install-plugin</artifactId>
-				<version>2.5.2</version>
 			</plugin>
 		</plugins>
 	</build>
