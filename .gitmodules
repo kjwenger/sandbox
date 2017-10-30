@@ -4,3 +4,6 @@
 [submodule "sandbox.cppcms"]
 	path = sandbox.cppcms
 	url = https://github.com/kjwenger/sandbox.cppcms.git
+[submodule "sandbox.petstore"]
+	path = sandbox.petstore
+	url = https://github.com/kjwenger/sandbox.petstore.git
