@@ -1,3 +1,6 @@
 [submodule "sandbox.iot"]
 	path = sandbox.iot
 	url = https://github.com/kjwenger/sandbox.iot.git
+[submodule "sandbox.cppcms"]
+	path = sandbox.cppcms
+	url = https://github.com/kjwenger/sandbox.cppcms.git
