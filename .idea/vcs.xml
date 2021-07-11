@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
-    <mapping directory="" vcs="" />
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sandbox.cppcms" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sandbox.iot" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sandbox.iot/sandbox.iot.arduino" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sandbox.iot/sandbox.iot.beaglbone" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sandbox.iot/sandbox.iot.raspberrypi" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sandbox.java.modbus" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sandbox.java.modbus/j2mod" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sandbox.petstore" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sandbox.petstore/sandbox.petstore.cppcms" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sandbox.petstore/sandbox.petstore.erlang" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sandbox.petstore/sandbox.petstore.golang" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sandbox.petstore/sandbox.petstore.nodejs" vcs="Git" />
   </component>
 </project>

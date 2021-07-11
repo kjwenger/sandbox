@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/sandbox.iml" filepath="$PROJECT_DIR$/.idea/sandbox.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sandbox.iml" filepath="$PROJECT_DIR$/sandbox.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sandbox.java.modbus/sandbox.java.modbus.iml" filepath="$PROJECT_DIR$/sandbox.java.modbus/sandbox.java.modbus.iml" />
     </modules>
   </component>
 </project>
