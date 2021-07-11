@@ -5,29 +5,31 @@
 		                    http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<modules>
-		<module>sandbox.model</module>
-		<module>sandbox.model.hibernate</module>
+		<!--<module>sandbox.model</module>-->
+		<!--<module>sandbox.model.hibernate</module>-->
 
-		<module>sandbox.javafx</module>
-		<module>sandbox.swing</module>
+		<!--<module>sandbox.javafx</module>-->
+		<!--<module>sandbox.swing</module>-->
 		<!-- <module>sandbox.rcp</module> -->
 
-		<module>sandbox.jaxrs</module>
-		<module>sandbox.axis2</module>
+		<!--<module>sandbox.jaxrs</module>-->
+		<!--<module>sandbox.axis2</module>-->
 		<!-- <module>sandbox.cxf.jaxrs</module> -->
 		<!-- <module>sandbox.cxf.jaxws</module> -->
-		<module>sandbox.jersey</module>
-		<module>sandbox.jersey.webapp</module>
-		<module>sandbox.resteasy.webapp</module>
-		<module>sandbox.spring.rest</module>
-		<module>sandbox.spring.rest.basic</module>
-		<module>sandbox.spring.rest.oauth2</module>
+		<!--<module>sandbox.jersey</module>-->
+		<!--<module>sandbox.jersey.webapp</module>-->
+		<!--<module>sandbox.resteasy.webapp</module>-->
+		<!--<module>sandbox.spring.rest</module>-->
+		<!--<module>sandbox.spring.rest.basic</module>-->
+		<!--<module>sandbox.spring.rest.oauth2</module>-->
 
 		<!-- <module>sandbox.clojure</module> -->
 		<!-- <module>sandbox.groovy</module> -->
-		<module>sandbox.java8</module>
+		<!--<module>sandbox.java8</module>-->
 		<!-- <module>sandbox.kotlin</module> -->
-		<module>sandbox.scala</module>
+		<!--<module>sandbox.scala</module>-->
+
+		<module>sandbox.java.modbus</module>
 	</modules>
 	<groupId>com.u14n</groupId>
 	<artifactId>sandbox</artifactId>

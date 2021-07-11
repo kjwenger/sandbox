@@ -7,3 +7,6 @@
 [submodule "sandbox.petstore"]
 	path = sandbox.petstore
 	url = https://github.com/kjwenger/sandbox.petstore.git
+[submodule "sandbox.java.modbus"]
+	path = sandbox.java.modbus
+	url = https://github.com/kjwenger/sandbox.java.modbus.git
