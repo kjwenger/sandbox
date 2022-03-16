@@ -4,9 +4,24 @@
 [submodule "sandbox.cppcms"]
 	path = sandbox.cppcms
 	url = https://github.com/kjwenger/sandbox.cppcms.git
-[submodule "sandbox.petstore"]
-	path = sandbox.petstore
-	url = https://github.com/kjwenger/sandbox.petstore.git
+[submodule "sandbox.gwt"]
+	path = sandbox.gwt
+	url = https://github.com/kjwenger/sandbox.gwt.git
+[submodule "sandbox.java"]
+	path = sandbox.java
+	url = https://github.com/kjwenger/sandbox.java.git
 [submodule "sandbox.java.modbus"]
 	path = sandbox.java.modbus
 	url = https://github.com/kjwenger/sandbox.java.modbus.git
+[submodule "sandbox.java.oxm"]
+	path = sandbox.java.oxm
+	url = https://github.com/kjwenger/sandbox.java.oxm.git
+[submodule "sandbox.maven"]
+	path = sandbox.maven
+	url = https://github.com/kjwenger/sandbox.maven.git
+[submodule "sandbox.nodejs"]
+	path = sandbox.nodejs
+	url = https://github.com/kjwenger/sandbox.nodejs.git
+[submodule "sandbox.petstore"]
+	path = sandbox.petstore
+	url = https://github.com/kjwenger/sandbox.petstore.git
