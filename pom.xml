@@ -107,7 +107,7 @@
 		<jaxb.version>2.2.11</jaxb.version>
 		<jersey.version>1.19</jersey.version>
 		<resteasy.version>3.0.13.Final</resteasy.version>
-		<spring.version>4.0.3.RELEASE</spring.version>
+		<spring.version>5.3.19</spring.version>
 		<junit.version>4.12</junit.version>
 		<scala.version>2.12.0-M3</scala.version>
 		<scala.compat.version>2.12.0-M3</scala.compat.version>
