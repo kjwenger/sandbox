@@ -103,7 +103,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<hibernate.version>5.0.5.Final</hibernate.version>
 		<java.version>1.8</java.version>
-		<jackson.version>2.7.0-rc1</jackson.version>
+		<jackson.version>2.13.4.1</jackson.version>
 		<jaxb.version>2.2.11</jaxb.version>
 		<jersey.version>1.19</jersey.version>
 		<resteasy.version>3.0.13.Final</resteasy.version>
